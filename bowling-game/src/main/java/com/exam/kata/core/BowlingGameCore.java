@@ -3,10 +3,11 @@ package com.exam.kata.core;
 public class BowlingGameCore {
 	
 	public int getScore(String lineOfBowling) {
-		if (lineOfBowling.substring(0,1).equals("-")){
-            return 0;
+		String score = lineOfBowling.substring(0, 1);
+        if (score.equals("-")){
+            score = "0";
         }
-        return 1;
+        return Integer.parseInt(score);
 	}
 
 }

@@ -28,5 +28,11 @@ public class BowlingGameCoreTest {
 	    int score = bowlGameCore.getScore("1-------------------");
 	    assertEquals(1, score);
 	 }
+	 
+	 @Test
+	 public void testGameScoreForFirstRollTwoPinAndRestAllZeroRoll(){
+		int score = bowlGameCore.getScore("2-------------------");
+		assertEquals(2, score);
+	 }
 
 }
