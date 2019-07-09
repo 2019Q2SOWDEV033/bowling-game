@@ -13,6 +13,13 @@ public class BowlingGameCoreTest {
 		BowlingGameCore bowlGameCore = new BowlingGameCore();
 		int score = bowlGameCore.getScore("--------------------");
 		assertEquals(0, score);
-   	}	
+   	}
+	
+	 @Test
+	 public void testGameScoreForFirstRollOnePinAndRestAllZeroRoll(){
+		BowlingGameCore bowlGameCore = new BowlingGameCore();
+	    int score = bowlGameCore.getScore("1-------------------");
+	    assertEquals(1, score);
+	 }
 
 }
