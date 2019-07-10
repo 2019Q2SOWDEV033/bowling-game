@@ -73,4 +73,10 @@ public class BowlingGameCoreTest {
 		int score = bowlGameCore.getScore("X53----------------");
 		assertEquals(26, score);
 	 }
+	 
+	 @Test
+	 public void testGameMaxScore300ForFullStrike() {
+		int score = bowlGameCore.getScore("XXXXXXXXXXXX");
+		assertEquals(300, score);
+	 }
 }
