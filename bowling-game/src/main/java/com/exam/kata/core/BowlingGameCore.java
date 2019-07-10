@@ -10,16 +10,24 @@ public class BowlingGameCore {
 		int result = 0;
 		int numberOfRoll = 0;
         for (int turn = 0; turn < 10; turn++) {
-            result += rollScore(lineOfBowling, numberOfRoll);
-            if (!isStrike(lineOfBowling, numberOfRoll)){
-                result += rollScore(lineOfBowling, numberOfRoll + 1);
-            }            
-            result += additionalScore(lineOfBowling, numberOfRoll);
+            result += turnScore(lineOfBowling, numberOfRoll);
             numberOfRoll += isStrike(lineOfBowling, numberOfRoll) ? 1 : 2;
         }
         return result;
 	}
 	
+	private int turnScore(String rolls, int numberOfRoll) {
+        return basicScore(rolls, numberOfRoll) + additionalScore(rolls, numberOfRoll);
+    }
+	
+	private int basicScore(String rolls, int numberOfRoll) {
+	    int result = rollScore(rolls, numberOfRoll);
+    	if (!isStrike(rolls, numberOfRoll)) {
+            result += rollScore(rolls, numberOfRoll + 1);
+        }
+	    return result;
+    }
+	        
     private int rollScore(String rolls, int numberOfRoll) {
     	String score = rolls.substring(numberOfRoll, numberOfRoll + 1);
         if (score.equals(_DASH_FOR_MISS)) {
