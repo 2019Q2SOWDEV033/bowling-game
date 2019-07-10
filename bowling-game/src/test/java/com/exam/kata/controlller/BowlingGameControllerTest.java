@@ -32,7 +32,7 @@ public class BowlingGameControllerTest
     }
     
     @Test
-    public void testCreateSignupFormInvalidUser() throws Exception {
+    public void testControllerStatus200ForBowlingScoreService() throws Exception {
         this.mockMvc.perform(get("/bowling-game/score"))
                     .andExpect(status().isOk());
     }
