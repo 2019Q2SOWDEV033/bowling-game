@@ -34,11 +34,11 @@ public class BowlingGameControllerTest
     }
     
     @Test
-    public void testControllerStatus200AndReturnParamAsResponseForBowlingScoreService() throws Exception {
+    public void testControllerStatus200AndReturnScoreAsResponseForBowlingScoreService() throws Exception {
     	MvcResult result = this.mockMvc.perform(get("/bowling-game/score")
         		    .param("lineOfBowling", "XXXXXXXXXXXX"))
                     .andExpect(status().isOk())
                     .andReturn();
-    	assertEquals("XXXXXXXXXXXX",result.getResponse().getContentAsString());
+    	assertEquals("300",result.getResponse().getContentAsString());
     }
 }
