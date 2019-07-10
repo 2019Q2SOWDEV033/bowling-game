@@ -11,9 +11,11 @@ public class BowlingGameCore {
 		int numberOfRoll = 0;
         for (int turn = 0; turn < 10; turn++) {
             result += rollScore(lineOfBowling, numberOfRoll);
-            result += rollScore(lineOfBowling, numberOfRoll + 1);
+            if (!isStrike(lineOfBowling, numberOfRoll)){
+                result += rollScore(lineOfBowling, numberOfRoll + 1);
+            }            
             result += additionalScore(lineOfBowling, numberOfRoll);
-            numberOfRoll += 10 == rollScore(lineOfBowling, numberOfRoll) ? 1 : 2;
+            numberOfRoll += isStrike(lineOfBowling, numberOfRoll) ? 1 : 2;
         }
         return result;
 	}
@@ -32,10 +34,20 @@ public class BowlingGameCore {
     
     private int additionalScore(String rolls, int numberOfRoll) {
         int additScore = 0;
-        if (rollScore(rolls, numberOfRoll) + rollScore(rolls, numberOfRoll + 1) == 10) {
+        if (isStrike(rolls, numberOfRoll)){
+        	additScore = rollScore(rolls, numberOfRoll + 1) + rollScore(rolls, numberOfRoll + 2);
+        } else if (isSpare(rolls, numberOfRoll)) {
         	additScore = rollScore(rolls, numberOfRoll + 2);
         }
         return additScore;
+    }
+    
+    private boolean isStrike(String rolls, int numberOfRoll) {
+        return 10 == rollScore(rolls, numberOfRoll);
+    }
+
+    private boolean isSpare(String rolls, int numberOfRoll) {
+        return rollScore(rolls, numberOfRoll) + rollScore(rolls, numberOfRoll + 1) == 10;
     }
 
 }

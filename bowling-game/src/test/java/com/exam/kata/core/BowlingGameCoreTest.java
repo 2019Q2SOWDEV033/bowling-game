@@ -67,10 +67,10 @@ public class BowlingGameCoreTest {
 		assertEquals(16, score);
 	 }
 	 
-	 /*@Test
+	 @Test
 	 @Description(value="Test Game Score If a Strike Present in First Frame and Two consecutive frame score Will added to the first frame score. Considered Rest of the first two frames pins are missed")
 	 public void testGameScoreIsNextTwoRollsScoreAdditionForStrike() {
 		int score = bowlGameCore.getScore("X53----------------");
 		assertEquals(26, score);
-	 }*/
+	 }
 }
