@@ -8,10 +8,12 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import com.exam.kata.controlller.BowlingGameController;
 
+import static org.junit.Assert.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -32,8 +34,11 @@ public class BowlingGameControllerTest
     }
     
     @Test
-    public void testControllerStatus200ForBowlingScoreService() throws Exception {
-        this.mockMvc.perform(get("/bowling-game/score"))
-                    .andExpect(status().isOk());
+    public void testControllerStatus200AndReturnParamAsResponseForBowlingScoreService() throws Exception {
+    	MvcResult result = this.mockMvc.perform(get("/bowling-game/score")
+        		    .param("lineOfBowling", "XXXXXXXXXXXX"))
+                    .andExpect(status().isOk())
+                    .andReturn();
+    	assertEquals("XXXXXXXXXXXX",result.getResponse().getContentAsString());
     }
 }
