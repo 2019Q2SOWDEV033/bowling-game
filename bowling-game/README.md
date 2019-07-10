@@ -1,4 +1,4 @@
-# Bowling Game scoring application to find the score based on the input
+﻿# Bowling Game scoring application to find the score based on the input
 
 This repo have the source code for Bowling Game Score finding logic. Its designed as a spring boot appliction and hosted the logic as a REST GET Service
 
@@ -37,13 +37,13 @@ More info on the rules at : http://www.topendsports.com/sport/tenpin/scoring.htm
 * Minimum JDK Version - 7.0
 * Minimum Maven Version - 3.5.0
 
-1. git clone https://github.com/2019-Q2_SOW_DEV_033/bowling-game.git
+1. git clone https://github.com/2019Q2SOWDEV033/bowling-game.git
 2. cd bowling-game
 3. mvn spring-boot:run
 
 ### Use Case/ How to Test
 
-1. open url http://localhost:8080/bowling-game/score?line=XXXXXXXXXXXX in any browser
+1. open url http://localhost:8080/bowling-game/score?lineOfBowling=XXXXXXXXXXXX in any browser
 2. In the value of line field above type the input you want to get the score 
     1. As Example above X as a strike, / as a spare and - as miss
     2. Maxmimum 20 values plus 2 values as bonus
