@@ -1,4 +1,4 @@
-package com.exam.kata.controlller;
+package com.exam.kata.controller;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -11,7 +11,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import com.exam.kata.controlller.BowlingGameController;
+import com.exam.kata.controller.BowlingGameController;
 
 import static org.junit.Assert.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
