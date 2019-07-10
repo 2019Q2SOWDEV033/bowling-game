@@ -1,4 +1,4 @@
-package com.exam.kata.core.controlller;
+package com.exam.kata.controlller;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -9,6 +9,9 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+
+import com.exam.kata.controlller.BowlingGameController;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
