@@ -85,4 +85,11 @@ public class BowlingGameCoreTest {
 		int score = bowlGameCore.getScore("5/5/5/5/5/5/5/5/5/5/5");
 		assertEquals(150, score);
 	 }
+	 
+	 @Test
+	 public void testGameRandomValidRollsWithManualCalculatedExpectation() {
+		int score = bowlGameCore.getScore("5/5/5-5-5/5-5-5-5-5-");
+		assertEquals(80, score);
+	 }
+	 
 }
