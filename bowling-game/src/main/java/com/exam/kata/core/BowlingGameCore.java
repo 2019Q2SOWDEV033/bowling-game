@@ -6,6 +6,9 @@ public class BowlingGameCore {
 		int result = 0;
         for (int i = 0; i < lineOfBowling.length(); i++){
         	result += rollScore(lineOfBowling, i);
+        	if (i < lineOfBowling.length() - 1 && rollScore(lineOfBowling, i) + rollScore(lineOfBowling, i + 1) == 10) {
+                result += rollScore(lineOfBowling, i + 2);
+            }
         }
         return result;
 	}

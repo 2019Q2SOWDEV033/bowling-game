@@ -2,6 +2,7 @@ package com.exam.kata.core;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.context.annotation.Description;
 
 import com.exam.kata.core.BowlingGameCore;
 
@@ -51,5 +52,12 @@ public class BowlingGameCoreTest {
 	 public void testGameScore10WhenFirstFrameIsStrikeAndRestMiss() {
 		int score = bowlGameCore.getScore("X------------------");
 		assertEquals(10, score);
+	 }
+	 
+	 @Test
+	 @Description(value="Test if Game Score is 16 with Next Frame First Roll Score Added Correctly to the first frame When First Frame is Strike followed by some pins in second frame and Rest all are Missed")
+	 public void testGameScore16WhenFirstFrameIsStrikeSecondNumberAndRestMissAndNextFrameScoreAddition() {
+		int score = bowlGameCore.getScore("3/3-----------------");
+		assertEquals(16, score);
 	 }
 }
