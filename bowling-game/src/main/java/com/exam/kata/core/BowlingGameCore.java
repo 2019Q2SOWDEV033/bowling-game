@@ -8,11 +8,12 @@ public class BowlingGameCore {
 	
 	public int getScore(String lineOfBowling) {
 		int result = 0;
-        for (int eachRoll = 0; eachRoll < lineOfBowling.length(); eachRoll++){
-        	result += rollScore(lineOfBowling, eachRoll);
-        	if (eachRoll % 2 == 0 && eachRoll < lineOfBowling.length() - 1 && rollScore(lineOfBowling, eachRoll) + rollScore(lineOfBowling, eachRoll + 1) == 10) {
-                result += rollScore(lineOfBowling, eachRoll + 2);
-            }
+		int numberOfRoll = 0;
+        for (int turn = 0; turn < 10; turn++) {
+            result += rollScore(lineOfBowling, numberOfRoll);
+            result += rollScore(lineOfBowling, numberOfRoll + 1);
+            result += additionalScore(lineOfBowling, numberOfRoll);
+            numberOfRoll += 10 == rollScore(lineOfBowling, numberOfRoll) ? 1 : 2;
         }
         return result;
 	}
@@ -27,6 +28,14 @@ public class BowlingGameCore {
             score = "10";
         }
         return Integer.parseInt(score);
+    }
+    
+    private int additionalScore(String rolls, int numberOfRoll) {
+        int additScore = 0;
+        if (rollScore(rolls, numberOfRoll) + rollScore(rolls, numberOfRoll + 1) == 10) {
+        	additScore = rollScore(rolls, numberOfRoll + 2);
+        }
+        return additScore;
     }
 
 }
