@@ -60,4 +60,10 @@ public class BowlingGameCoreTest {
 		int score = bowlGameCore.getScore("3/3-----------------");
 		assertEquals(16, score);
 	 }
+	 
+	 @Test
+	 public void testGameScore16TwoConsecutiveScoreFrameWithSomePinsAndRestMiss() {
+		int score = bowlGameCore.getScore("3553----------------");
+		assertEquals(16, score);
+	 }
 }

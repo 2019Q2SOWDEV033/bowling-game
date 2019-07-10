@@ -10,7 +10,7 @@ public class BowlingGameCore {
 		int result = 0;
         for (int eachRoll = 0; eachRoll < lineOfBowling.length(); eachRoll++){
         	result += rollScore(lineOfBowling, eachRoll);
-        	if (eachRoll < lineOfBowling.length() - 1 && rollScore(lineOfBowling, eachRoll) + rollScore(lineOfBowling, eachRoll + 1) == 10) {
+        	if (eachRoll % 2 == 0 && eachRoll < lineOfBowling.length() - 1 && rollScore(lineOfBowling, eachRoll) + rollScore(lineOfBowling, eachRoll + 1) == 10) {
                 result += rollScore(lineOfBowling, eachRoll + 2);
             }
         }
