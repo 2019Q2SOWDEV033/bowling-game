@@ -79,4 +79,10 @@ public class BowlingGameCoreTest {
 		int score = bowlGameCore.getScore("XXXXXXXXXXXX");
 		assertEquals(300, score);
 	 }
+	 
+	 @Test
+	 public void testGameAllTurnsSpareAndLastBonusSomePins() {
+		int score = bowlGameCore.getScore("5/5/5/5/5/5/5/5/5/5/5");
+		assertEquals(150, score);
+	 }
 }
