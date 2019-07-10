@@ -46,4 +46,10 @@ public class BowlingGameCoreTest {
 		int score = bowlGameCore.getScore("3/------------------");
 		assertEquals(10, score);
 	 }
+	 
+	 @Test
+	 public void testGameScore10WhenFirstFrameIsStrikeAndRestMiss() {
+		int score = bowlGameCore.getScore("X------------------");
+		assertEquals(10, score);
+	 }
 }
